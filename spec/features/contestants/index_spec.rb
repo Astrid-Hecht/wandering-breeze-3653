@@ -27,7 +27,6 @@ RSpec.describe 'contestants index' do
   end
 
   it 'lists names of all contestants' do
-    save_and_open_page
     expect(page).to have_content(@jay.name)
     expect(page).to have_content(@gretchen.name)
     expect(page).to have_content(@kentaro.name)

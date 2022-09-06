@@ -34,4 +34,31 @@ RSpec.describe 'project show' do
   it 'shows the challenge theme' do
     expect(page).to have_content(@recycled_material_challenge.theme)
   end
+
+  it 'shows a count of the contestants per project' do 
+    within "#contestant-count" do
+      expect(page).to have_content('Contestants: 2')
+    end
+
+
+    visit "/projects/#{@upholstery_tux.id}"
+
+    within "#contestant-count" do
+      expect(page).to have_content('Contestants: 2')
+    end
+
+
+    visit "/projects/#{@boardfit.id}"
+
+    within "#contestant-count" do
+      expect(page).to have_content('Contestants: 2')
+    end
+
+
+    visit "/projects/#{@lit_fit.id}"
+
+    within "#contestant-count" do
+      expect(page).to have_content('Contestants: 0')
+    end
+  end
 end
