@@ -4,6 +4,6 @@ class Contestant < ApplicationRecord
   has_many :projects, through: :contestant_projects
 
   def show_proj
-    projects.where('contestant_projects.contestant_id = ?', self.id)
+    projects.where('contestant_projects.contestant_id = ?', id)
   end
 end

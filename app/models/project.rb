@@ -13,6 +13,10 @@ class Project < ApplicationRecord
   end
 
   def avg_exp
-    contestants.average(:years_of_experience)
-  end 
+    if contestants.count.positive?
+      contestants.average(:years_of_experience)
+    else
+      0
+    end
+  end
 end
