@@ -1,0 +1,20 @@
+<h1>Contestants Index</h1>
+
+<%@contestants.each do |contestant|%>
+<table id="projects-for-<%= contestant.id %>">
+  <tr>
+    <th><h4>Name:</h4></th>
+    <td> <%= contestant.name %> </td>
+  </tr>
+  <tr>
+    <th><h4> Projects:</h4></th>
+    <td>|
+      <% contestant.show_proj.each do |proj| %>
+        <%= proj.name %> |
+      <%end%>
+    </td>
+  </tr>
+</table>
+<br>
+---
+<%end%>
