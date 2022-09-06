@@ -58,7 +58,7 @@ RSpec.describe 'project show' do
 
   it 'shows avg experience of contestants working on proj' do 
     within "#avg-exp" do
-      expect(page).to have_content("#{(@jay.years_of_experience + @gretchen.years_of_experience)/2} years")
+      expect(page).to have_content("#{((@jay.years_of_experience + @gretchen.years_of_experience).to_f/2).round(1)} years")
     end
   end
 end
