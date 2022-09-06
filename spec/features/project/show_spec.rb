@@ -32,6 +32,6 @@ RSpec.describe 'project show' do
   end
 
   it 'shows the challenge theme' do
-    expect(page).to have_content(@furniture_challenge.name)
+    expect(page).to have_content(@recycled_material_challenge.theme)
   end
 end
