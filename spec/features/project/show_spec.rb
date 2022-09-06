@@ -40,25 +40,25 @@ RSpec.describe 'project show' do
       expect(page).to have_content('Contestants: 2')
     end
 
-
     visit "/projects/#{@upholstery_tux.id}"
-
     within "#contestant-count" do
       expect(page).to have_content('Contestants: 2')
     end
-
 
     visit "/projects/#{@boardfit.id}"
-
     within "#contestant-count" do
       expect(page).to have_content('Contestants: 2')
     end
 
-
     visit "/projects/#{@lit_fit.id}"
-
     within "#contestant-count" do
       expect(page).to have_content('Contestants: 0')
+    end
+  end
+
+  it 'shows avg experience of contestants working on proj' do 
+    within "#avg-exp" do
+      expect(page).to have_content("#{(@jay.years_of_experience + @gretchen.years_of_experience)/2} years")
     end
   end
 end
